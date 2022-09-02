@@ -5,10 +5,11 @@ import ErrorState from "./steps/Error";
 import MoreInfo from "./steps/MoreInfo";
 import Root from "./steps/Root";
 import Success from "./steps/Success";
+import FormCard from "./components/Form/FormCard"
 
 const App = () => {
   return (
-    <div>
+    <FormCard>
       <Router>
         <Routes>
           <Route path="/" element={<Root />} />
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/error" element={<ErrorState />} />
         </Routes>
       </Router>
-    </div>
+    </FormCard>
   );
 }
 

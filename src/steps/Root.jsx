@@ -1,27 +1,44 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useFormData } from "../context";
+import { FormFieldSet } from "../components/Form";
+import { Button } from "../components/Button";
 
 const Root = () => {
-  const { handleSubmit } = useForm()
+  const { handleSubmit, formState: { errors}, register } = useForm()
   const navigate = useNavigate()
+  const { setFormValues } = useFormData()
 
-  const onSubmit = () => {
-    console.log('OOF submitting');
+  const onSubmit = (values) => {
+    setFormValues(values)
     navigate('/more-info');
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="firstName">First Name</label>
-      <input type="text" />
-      <label htmlFor="email">Email</label>
-      <input type="email" />
-      <label htmlFor="password">Password</label>
-      <input type="password" />
+    <>
+      <h1 className="text-center font-bold">Sign Up</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <FormFieldSet>
+          <input className="border-2 p-1 w-full" placeholder="First Name" type="text" {...register("name", {
+            required: true
+          })} />
+        </FormFieldSet>
 
-      <button type="submit">Next</button>
-    </form>
+        <FormFieldSet>
+          <input className="border-2 p-1 w-full" placeholder="Email" type="email" {...register("email", {
+            required: true
+          })} />
+        </FormFieldSet>
+
+        <FormFieldSet>
+          <input className="border-2 p-1 w-full" placeholder="Password" type="password" {...register("password", {
+            required: true
+          })} />
+        </FormFieldSet>
+        <Button type="submit">Next</Button>
+      </form>
+    </>
   )
 }
 
