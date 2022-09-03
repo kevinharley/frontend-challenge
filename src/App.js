@@ -1,18 +1,26 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Confirmation from './steps/Confirmation';
+import ErrorState from './steps/Error';
+import MoreInfo from './steps/MoreInfo';
+import Root from './steps/Root';
+import Success from './steps/Success';
+import FormCard from './components/Form/FormCard';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h1>Welcome to Upgrade challenge</h1>
-        </header>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <FormCard>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/more-info" element={<MoreInfo />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/error" element={<ErrorState />} />
+        </Routes>
+      </Router>
+    </FormCard>
+  );
+};
 
 export default App;
