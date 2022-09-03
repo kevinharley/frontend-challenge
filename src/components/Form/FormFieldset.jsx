@@ -1,10 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export const FormFieldSet = ({children}) => {
-  return (
-    <div className="my-3">
-      {children}
-    </div>
-  )
-}
-
+export const FormFieldSet = ({ children }) => {
+  return <div className="my-3">{children}</div>;
+};

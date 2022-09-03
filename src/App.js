@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import Confirmation from "./steps/Confirmation";
-import ErrorState from "./steps/Error";
-import MoreInfo from "./steps/MoreInfo";
-import Root from "./steps/Root";
-import Success from "./steps/Success";
-import FormCard from "./components/Form/FormCard"
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Confirmation from './steps/Confirmation';
+import ErrorState from './steps/Error';
+import MoreInfo from './steps/MoreInfo';
+import Root from './steps/Root';
+import Success from './steps/Success';
+import FormCard from './components/Form/FormCard';
 
 const App = () => {
   return (
@@ -21,6 +21,6 @@ const App = () => {
       </Router>
     </FormCard>
   );
-}
+};
 
 export default App;

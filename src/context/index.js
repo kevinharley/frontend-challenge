@@ -1,8 +1,8 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext } from 'react';
 
-export const FormContext = createContext()
+export const FormContext = createContext();
 
-export const FormProvider = ({children}) => {
+export const FormProvider = ({ children }) => {
   const [data, setData] = useState({});
 
   const setFormValues = (values) => {
@@ -12,11 +12,7 @@ export const FormProvider = ({children}) => {
     }));
   };
 
-  return (
-    <FormContext.Provider value={{data, setFormValues}}>
-      {children}
-    </FormContext.Provider>
-  )
-}
+  return <FormContext.Provider value={{ data, setFormValues }}>{children}</FormContext.Provider>;
+};
 
-export const useFormData = () => useContext(FormContext)
+export const useFormData = () => useContext(FormContext);

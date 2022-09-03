@@ -9,6 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^7.34.2",
+    "react-hook-form-persist": "^3.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "supertest": "^4.0.2"
